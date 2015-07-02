@@ -5,7 +5,7 @@
   "homepage": "https://github.com/aetheric/sockit-express",
   "author": "Peter Cummuskey <peterc@aetheric.co.nz> (http://gplus.to/tzrlk/)",
   "license": "MIT",
-  "main": "gulpfile.js",
+  "main": "src/main/middleware.js",
   "keywords": [
     "session",
     "websocket",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:aetheric/sockit-express.git"
+    "url": "https://github.com/aetheric/sockit-express.git"
   },
   "bugs": {
     "url": "https://github.com/aetheric/sockit-express/issues"
@@ -44,6 +44,8 @@
   "dependencies": {
     "express": "^4.13.0",
     "express-ws": "^0.2.6",
-    "sockit": "../sockit"
+    "session-file-store": "0.0.12",
+    "sockit": "git+https://github.com/aetheric/sockit.git",
+    "underscore": "^1.8.3"
   }
 }
