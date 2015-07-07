@@ -1,4 +1,6 @@
 SOCKIT-EXPRESS
 ==============
 
+image:https://travis-ci.org/aetheric/sockit-express.svg?branch=master["Build Status", link="https://travis-ci.org/aetheric/sockit-express"]
+
 Express middleware for use with sockit.
