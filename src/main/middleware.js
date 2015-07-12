@@ -7,7 +7,7 @@ var Sockit = require('sockit');
 /**
  *
  * @param {Object} configuration for session, etc.
- * @returns {Function} The middleware function for express.
+ * @returns {Object} Service methods for making life easier.
  */
 module.exports = function(configuration) {
 
@@ -22,5 +22,38 @@ module.exports = function(configuration) {
 	app.ws('/', function(socket, request) {
 		new Sockit(socket, request.session, config.listeners);
 	});
+
+	return {
+
+		on: function(eventKey, callback) {
+
+			// Check to see if the listener has already been set.
+			var listener = config.listeners[eventKey];
+			if (listener) {
+				console.log('Replacing existing event listener: ' + eventKey);
+			}
+
+			// Set the new listener and return whatever was there previously.
+			config.listeners[eventKey] = callback;
+			return listener;
+
+		},
+
+		off: function(eventKey) {
+
+			// Check to see if the listener has been set.
+			var listener = config.listeners[eventKey];
+			if (!listener) {
+				console.log('No event listener set for: ' + eventKey);
+				return undefined;
+			}
+
+			// Remove the listener and return whatever was there.
+			delete config.listeners[eventKey];
+			return listener;
+
+		}
+
+	};
 
 };
