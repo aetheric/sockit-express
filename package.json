@@ -1,6 +1,6 @@
 {
   "name": "sockit-express",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Express middleware for use with sockit.",
   "homepage": "https://github.com/aetheric/sockit-express",
   "author": "Peter Cummuskey <peterc@aetheric.co.nz> (http://gplus.to/tzrlk/)",
